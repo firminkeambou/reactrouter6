@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//we are going to import BrowserRouter (Maybe former context) because our app is destined to be used in a  Web browser
+//HashRouter:  add "#" before the actual root you selected, for example, "/books" becomes "/#/books/"
+//unstable_HistoryRouter  : take complete control of the history of your browser navigation
+//MemoryRouter :changing of routes are made in the memory, not in the browser , usually good enough when testing
+//StaticRouter : only useful for server rendering page, because , it fixes the only you have to run you code in. import { StaticRouter } from "react-router-dom/server";
+//NativeRouter for Ract-Native
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
